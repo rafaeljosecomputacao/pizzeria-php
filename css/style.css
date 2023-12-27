@@ -1,0 +1,22 @@
+/* General */
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    transition: .5s;
+    cursor: pointer;
+}
