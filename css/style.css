@@ -1,3 +1,11 @@
+/* Variables */
+:root {
+    --primary-color: #cf3b55;
+    --secondary-color: #ffc565;
+    --light-color: #F5F5F5;
+    --dark-color: #292929;
+}
+
 /* General */
 * {
     font-family: 'Roboto', sans-serif;
@@ -19,4 +27,16 @@ li {
 button {
     transition: .5s;
     cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 3rem .5rem;
+}
+
+footer p,
+footer span {
+    font-weight: 300;
 }
