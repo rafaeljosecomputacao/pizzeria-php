@@ -22,6 +22,28 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        Header
+        <!-- Navbar -->
+        <div class="navigation-bar">
+            <div class="navigation-bar-brand">
+                <a href="index.php"><img src="img/logo.png" alt="Logo">Pizzeria</a>
+            </div>
+            <div class="navigation-bar-toggle">
+                <button onclick="NavbarToggle()" class="navigation-bar-icon"><i class="bi bi-three-dots-vertical"></i></button>
+            </div>
+            <nav class="navigation-bar-items">
+                <ul>
+                    <li class="navigation-bar-item">
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li class="navigation-bar-item">
+                        <a href="index.php">New Order</a>
+                    </li>
+                    <li class="navigation-bar-item">
+                        <a href="dashboard.php">Dashboard</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>

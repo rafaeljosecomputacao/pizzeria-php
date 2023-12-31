@@ -3,7 +3,7 @@
     --primary-color: #cf3b55;
     --secondary-color: #ffc565;
     --light-color: #F5F5F5;
-    --dark-color: #292929;
+    --dark-color: #3D3D3D;
 }
 
 /* General */
@@ -29,6 +29,70 @@ button {
     cursor: pointer;
 }
 
+/* Navbar */
+.navigation-bar {
+    background-color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+}
+
+.navigation-bar-brand a {
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.navigation-bar-brand img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+  
+.navigation-bar-toggle {
+    display: initial;
+    align-self: flex-end;
+    position: absolute;
+    top: 16px;
+}
+
+.navigation-bar-icon {
+    background-color: transparent;
+    border: none;
+}
+
+.navigation-bar-icon i {
+    color: var(--dark-color);
+    font-size: 1rem;
+}
+
+.navigation-bar .open {
+    display: block;
+}
+
+.navigation-bar-items {
+    display: none;
+}
+
+.navigation-bar-items ul {
+    margin: 0;
+    padding: 1rem 0 0;
+}
+  
+.navigation-bar-item {
+    padding: .5rem 0;
+}
+  
+.navigation-bar-item a {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+.navigation-bar-item a:hover {
+    color: var(--primary-color);
+}
+
 /* Footer */
 footer {
     background-color: var(--dark-color);
@@ -39,4 +103,36 @@ footer {
 footer p,
 footer span {
     font-weight: 300;
+}
+
+/* Responsive */
+@media (min-width: 1024px) {
+    /* Navbar */
+    .navigation-bar {
+        flex-direction: row;
+        padding: 1rem 6rem;
+    }
+
+    .navigation-bar-brand {
+        margin-right: 2rem;
+    }
+
+    .navigation-bar-toggle {
+        display: none;
+    }
+
+    .navigation-bar-items {
+        display: flex;
+    }
+
+    .navigation-bar-items ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .navigation-bar-item {
+        padding: 0 2rem;
+    }
 }
