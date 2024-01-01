@@ -1,7 +1,7 @@
 /* Variables */
 :root {
     --primary-color: #cf3b55;
-    --secondary-color: #ffc565;
+    --secondary-color: #D6D6D6;
     --light-color: #F5F5F5;
     --dark-color: #3D3D3D;
 }
@@ -13,6 +13,10 @@
     font-weight: 400;
     margin: 0;
     padding: 0;
+}
+
+body {
+    background-color: var(--dark-color);
 }
 
 a {
@@ -93,10 +97,34 @@ button {
     color: var(--primary-color);
 }
 
+/* Main Index */
+.main {
+    background-color: var(--light-color);
+    border-radius: 5px;
+    margin: .5rem .5rem 12rem;
+    padding: 1rem;
+}
+  
+.main h2,
+.main label {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+.main label {
+    margin: 0 0 .2rem .5rem;
+}
+
+.main select,
+.main option {
+    color: var(--dark-color);
+    font-weight: 300;
+}
+
 /* Footer */
 footer {
-    background-color: var(--dark-color);
-    color: var(--light-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
     padding: 3rem .5rem;
 }
 
@@ -106,6 +134,13 @@ footer span {
 }
 
 /* Responsive */
+@media (min-width: 768px) {
+    /* Main Index */
+    .main {
+        margin: 1rem 1rem 12rem;
+    }
+}
+
 @media (min-width: 1024px) {
     /* Navbar */
     .navigation-bar {
@@ -134,5 +169,10 @@ footer span {
 
     .navigation-bar-item {
         padding: 0 2rem;
+    }
+
+    /* Main Index */
+    .main {
+        margin: 2rem 25rem 12rem;
     }
 }
