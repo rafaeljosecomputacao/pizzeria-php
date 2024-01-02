@@ -1,5 +1,6 @@
-<?php
-    include_once("templates/header.php");
+<?php 
+    include_once("process/new-order.php");
+    include_once("templates/header.php");  
 ?>
     <!-- Main -->
     <main class="main">
