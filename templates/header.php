@@ -1,3 +1,14 @@
+<?php 
+    $msg = "";
+
+    if(isset($_SESSION["msg"])) {
+        $msg = $_SESSION["msg"];
+        $status = $_SESSION["status"];
+
+        $_SESSION["msg"] = "";
+        $_SESSION["status"] = "";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,3 +58,9 @@
             </nav>
         </div>
     </header>
+    <!-- Validation Message -->
+    <?php if($msg != ""): ?>
+        <div class="alert alert-<?= $status ?> message">
+            <p><?= $msg ?></p>
+        </div>
+    <?php endif; ?>
