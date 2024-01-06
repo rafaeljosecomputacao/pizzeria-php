@@ -32,8 +32,8 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success mt-3 w-100"><i class="bi bi-plus"></i>New Order</button>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success mt-3"><i class="bi bi-plus"></i>New Order</button>
             </div>
         </form>
     </main>

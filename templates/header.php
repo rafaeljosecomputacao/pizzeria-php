@@ -41,13 +41,12 @@
                 <a href="index.php"><img src="img/logo.png" alt="Logo">Pizzeria</a>
             </div>
             <div class="navigation-bar-toggle">
-                <button onclick="NavbarToggle()" class="navigation-bar-icon"><i class="bi bi-three-dots-vertical"></i></button>
+                <button onclick="NavbarToggle()" class="navigation-bar-icon">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
             </div>
             <nav class="navigation-bar-items">
                 <ul>
-                    <li class="navigation-bar-item">
-                        <a href="index.php">Home</a>
-                    </li>
                     <li class="navigation-bar-item">
                         <a href="index.php">New Order</a>
                     </li>
@@ -60,7 +59,10 @@
     </header>
     <!-- Validation Message -->
     <?php if($msg != ""): ?>
-        <div class="alert alert-<?= $status ?> message">
+        <div class="alert alert-<?= $status ?> alert-dismissible message" role="alert">
             <p><?= $msg ?></p>
+            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <i class="bi bi-x-lg"></i>
+            </button>
         </div>
     <?php endif; ?>
