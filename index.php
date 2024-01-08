@@ -4,7 +4,7 @@
 ?>
     <!-- Main -->
     <main class="main">
-        <h2 class="text-center mb-3">Choose your pizza</h2>
+        <h3 class="mb-3">Choose your pizza</h3>
         <form action="process/new-order.php" method="POST">
             <div class="form-group">
                 <label for="edge">Edge</label>
@@ -32,7 +32,7 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div class="form-group text-center">
+            <div class="form-group">
                 <button type="submit" class="btn btn-success mt-3"><i class="bi bi-plus"></i>New Order</button>
             </div>
         </form>

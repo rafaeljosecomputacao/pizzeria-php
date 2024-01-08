@@ -132,7 +132,7 @@ button {
     padding: 1rem;
 }
   
-.main h2,
+.main h3,
 .main label {
     color: var(--dark-color);
     font-weight: 700;
@@ -148,10 +148,62 @@ button {
     font-weight: 300;
 }
 
-.main button {
-    width: 100%;
+/* Main Dashboard */
+.dashboard {
+    background-color: var(--light-color);
+    border-radius: 5px;
+    margin: .5rem;
+    padding: 1rem;
 }
 
+.dashboard h3 {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+.table {
+    vertical-align: middle;
+    border-color: var(--secondary-color);
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--dark-color);
+}
+
+.table thead th {
+    font-weight: 700;
+}
+
+.table thead th:nth-child(5),
+.table thead th:nth-child(6),
+.table tbody td:nth-child(5),
+.table tbody td:nth-child(6) {
+    display: none;
+}
+
+.table ul {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.update-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.update-btn,
+.delete-btn {
+    color: var(--light-color);
+}
+
+.update-btn {
+    margin-left: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+  
 /* Footer */
 footer {
     background-color: var(--light-color);
@@ -176,8 +228,21 @@ footer span {
         margin: 1rem 1rem 12rem;
     }
 
-    .main button {
-        width: 50%;
+    /* Main Dashboard */
+    .dashboard {
+        margin: 1rem;
+    }
+
+    .table thead th:nth-child(5),
+    .table thead th:nth-child(6),
+    .table tbody td:nth-child(5),
+    .table tbody td:nth-child(6) {
+        display: inline-flex;
+    }
+
+    .table tbody td:nth-child(5),
+    .table tbody td:nth-child(6) {
+        margin-bottom: -1px;   
     }
 }
 
@@ -219,5 +284,10 @@ footer span {
     /* Main Index */
     .main {
         margin: 2rem 25rem 12rem;
+    }
+
+    /* Main Dashboard */
+    .dashboard {
+        margin: 2rem 6rem;
     }
 }
