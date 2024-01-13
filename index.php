@@ -1,11 +1,11 @@
 <?php 
-    include_once("process/new-order.php");
+    include_once("database/new-order.php");
     include_once("templates/header.php");  
 ?>
     <!-- Main -->
     <main class="main">
         <h3 class="mb-3">Choose your pizza</h3>
-        <form action="process/new-order.php" method="POST">
+        <form action="database/new-order.php" method="POST">
             <div class="form-group">
                 <label for="edge">Edge</label>
                 <select name="edge" id="edge" class="form-control mb-3">

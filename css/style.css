@@ -184,19 +184,24 @@ button {
     padding-left: 0;
 }
 
-.update-form {
+.sync-form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 }
 
-.update-btn,
+.sync-form select,
+.sync-form option {
+    color: var(--dark-color);
+}
+
+.sync-btn,
 .delete-btn {
     color: var(--light-color);
 }
 
-.update-btn {
+.sync-btn {
     margin-left: .5rem;
     display: flex;
     align-items: center;
