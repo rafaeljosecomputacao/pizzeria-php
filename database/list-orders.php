@@ -88,6 +88,25 @@
 
     // Sync order state and delete order
     } else if($method === "POST") {
+        // Checking post type
+        $type = $_POST["type"];
 
+        // Delete order
+        if($type === "delete") {
+            $pizzaId = $_POST["id"];
+
+            $deleteQuery = $connection->prepare("DELETE FROM orders WHERE pizza_id = :pizza_id");
+
+            $deleteQuery->bindParam(":pizza_id", $pizzaId, PDO::PARAM_INT);
+
+            $deleteQuery->execute();
+
+            // User feedback
+            $_SESSION["msg"] = "Deleted order";
+            $_SESSION["status"] = "danger";
+        }
+
+        // Returns to dashboard
+        header("Location: ../dashboard.php");
     }
 ?>
