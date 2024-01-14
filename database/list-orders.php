@@ -86,7 +86,7 @@
 
         $states = $statesQuery->fetchAll();
 
-    // Sync order state and delete order
+    // Delete order and sync order state
     } else if($method === "POST") {
         // Checking post type
         $type = $_POST["type"];
@@ -104,6 +104,22 @@
             // User feedback
             $_SESSION["msg"] = "Deleted order";
             $_SESSION["status"] = "danger";
+        
+        // Sync order state
+        } else if($type === "sync") {
+            $pizzaId = $_POST["id"];
+            $stateId = $_POST["states"];
+
+            $syncQuery = $connection->prepare("UPDATE orders SET state_id = :state_id WHERE pizza_id = :pizza_id");
+
+            $syncQuery->bindParam(":pizza_id", $pizzaId, PDO::PARAM_INT);
+            $syncQuery->bindParam(":state_id", $stateId, PDO::PARAM_INT);
+
+            $syncQuery->execute();
+
+            // User feedback
+            $_SESSION["msg"] = "Synchronized order state";
+            $_SESSION["status"] = "primary";
         }
 
         // Returns to dashboard
