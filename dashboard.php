@@ -9,17 +9,27 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Pizza</th>
                     <th scope="col">Edge</th>
                     <th scope="col">Dough</th>
                     <th scope="col">Flavors</th>
-                    <th scope="col" class="w-50">State</th>
-                    <th scope="col" class="w-50">Actions</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($pizzas as $pizza): ?>
                     <tr>
                         <td><?= $pizza["id"] ?></td>
+                        <td>
+                            <?= $pizza["edge"] ?><br>
+                            <?= $pizza["dough"] ?><br>
+                            <ul>                                       
+                                <?php foreach($pizza["flavors"] as $flavor): ?>
+                                    <li><?= $flavor ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </td>
                         <td><?= $pizza["edge"] ?></td>
                         <td><?= $pizza["dough"] ?></td>
                         <td>
@@ -29,7 +39,7 @@
                                 <?php endforeach; ?>
                             </ul>
                         </td>
-                        <td class="w-50">
+                        <td>
                             <form action="database/list-orders.php" method="POST" class="form-group sync-form">
                                 <input type="hidden" name="type" value="sync">
                                 <input type="hidden" name="id" value="<?= $pizza["id"] ?>">
@@ -38,14 +48,14 @@
                                         <option value="<?= $state["id"] ?>" <?php echo ($state["id"] == $pizza["state"]) ? "selected" : ""; ?>><?= $state["state"] ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <button type="submit" class="btn btn-primary sync-btn"><i class="bi bi-arrow-repeat"></i>Sync</button>
+                                <button type="submit" class="btn text-primary sync-btn"><i class="bi bi-arrow-repeat"></i></button>
                             </form>
                         </td>
-                        <td class="w-50">
+                        <td>
                             <form action="database/list-orders.php" method="POST" class="form-group">
                                 <input type="hidden" name="type" value="delete">
                                 <input type="hidden" name="id" value="<?= $pizza["id"] ?>">
-                                <button type="submit" class="btn btn-danger delete-btn"><i class="bi bi-trash"></i>Delete</button>
+                                <button type="submit" class="btn text-danger delete-btn"><i class="bi bi-trash"></i><span>Delete</span></button>
                             </form>
                         </td>
                     </tr>

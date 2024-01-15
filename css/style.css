@@ -145,7 +145,6 @@ button {
 .main select,
 .main option {
     color: var(--dark-color);
-    font-weight: 300;
 }
 
 /* Main Dashboard */
@@ -153,7 +152,7 @@ button {
     background-color: var(--light-color);
     border-radius: 5px;
     margin: .5rem;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .dashboard h3 {
@@ -168,15 +167,13 @@ button {
     --bs-table-color: var(--dark-color);
 }
 
-.table thead th {
-    font-weight: 700;
+.table thead th,
+.table tbody td {
+    padding: .3rem;
 }
 
-.table thead th:nth-child(5),
-.table thead th:nth-child(6),
-.table tbody td:nth-child(5),
-.table tbody td:nth-child(6) {
-    display: none;
+.table thead th {
+    font-weight: 700;
 }
 
 .table ul {
@@ -187,7 +184,6 @@ button {
 .sync-form {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
 }
 
@@ -196,17 +192,28 @@ button {
     color: var(--dark-color);
 }
 
-.sync-btn,
-.delete-btn {
-    color: var(--light-color);
+.sync-btn {
+    border: none;
 }
 
-.sync-btn {
-    margin-left: .5rem;
+.sync-btn i {
+    font-size: 1rem;
+}
+
+.delete-btn { 
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    padding-left: 0;
+    border: none;
+}
+
+.delete-btn i {
+    font-size: 1rem;
+    padding-top: .2rem;
+}
+
+.delete-btn span {
+    display: none;
 }
   
 /* Footer */
@@ -222,6 +229,18 @@ footer span {
 }
 
 /* Responsive */
+@media (max-width: 425px) {
+    /* Main Dashboard */
+    .table thead th:nth-child(3),
+    .table thead th:nth-child(4),
+    .table thead th:nth-child(5),
+    .table tbody td:nth-child(3),
+    .table tbody td:nth-child(4),
+    .table tbody td:nth-child(5) {
+        display: none;
+    }
+}
+
 @media (min-width: 768px) {
     /* Validation Message */
     .message {
@@ -236,18 +255,30 @@ footer span {
     /* Main Dashboard */
     .dashboard {
         margin: 1rem;
+        padding: 1rem;
     }
 
-    .table thead th:nth-child(5),
-    .table thead th:nth-child(6),
-    .table tbody td:nth-child(5),
-    .table tbody td:nth-child(6) {
-        display: inline-flex;
+    .table thead th,
+    .table tbody td {
+        padding: .5rem;
     }
 
-    .table tbody td:nth-child(5),
-    .table tbody td:nth-child(6) {
-        margin-bottom: -1px;   
+    .table thead th:nth-child(2),
+    .table tbody td:nth-child(2) {
+        display: none;
+    }
+
+    .sync-form select,
+    .sync-form option {
+        width: 50%;
+    }
+
+    .sync-btn i {
+        font-size: 1.8rem;
+    }
+
+    .delete-btn i {
+        font-size: 1.5rem;
     }
 }
 
@@ -294,5 +325,10 @@ footer span {
     /* Main Dashboard */
     .dashboard {
         margin: 2rem 6rem;
+    }
+
+    .delete-btn span {
+        display: block;
+        margin-left: .2rem;
     }
 }
