@@ -11,6 +11,11 @@ function NavbarToggle() {
     }
 }
 
+// Alert auto close
+setTimeout(function() {
+    bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert')).close();
+}, 5000);
+
 // Current year for footer
 var year = new Date();
 document.getElementById('year').innerHTML = year.getFullYear();
