@@ -1,0 +1,66 @@
+Create database:
+CREATE DATABASE pizzeriadb;
+
+Use database:
+USE pizzeriadb;
+
+Create table:
+CREATE TABLE edges(
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	edge VARCHAR(100)
+);
+
+CREATE TABLE doughs(
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	dough VARCHAR(100)
+);
+
+CREATE TABLE flavors(
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	flavor VARCHAR(100)
+);
+
+CREATE TABLE pizzas (
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	edge_id INT NOT NULL,
+  	dough_id INT NOT NULL,
+  	FOREIGN KEY (edge_id) REFERENCES edges(id),
+  	FOREIGN KEY (dough_id) REFERENCES doughs(id)
+);
+
+CREATE TABLE pizza_flavor (
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	pizza_id INT NOT NULL,
+  	flavor_id INT NOT NULL,
+  	FOREIGN KEY (pizza_id) REFERENCES pizzas(id),
+  	FOREIGN KEY (flavor_id) REFERENCES flavors(id)
+);
+
+CREATE TABLE states(
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	state VARCHAR(100)
+);
+
+CREATE TABLE orders (
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	pizza_id INT NOT NULL,
+  	state_id INT NOT NULL,
+  	FOREIGN KEY (pizza_id) REFERENCES pizzas(id),
+  	FOREIGN KEY (state_id) REFERENCES states(id)
+);
+
+Insert initial data:
+INSERT INTO states (state) VALUES ("Preparation");
+INSERT INTO states (state) VALUES ("Delivery");
+INSERT INTO states (state) VALUES ("Completed");
+
+INSERT INTO edges (edge) VALUES ("Cheddar");
+INSERT INTO edges (edge) VALUES ("Catupiry");
+
+INSERT INTO doughs (dough) VALUES ("Regular");
+INSERT INTO doughs (dough) VALUES ("Spiced");
+
+INSERT INTO flavors (flavor) VALUES ("Chicken");
+INSERT INTO flavors (flavor) VALUES ("Pepperoni");
+INSERT INTO flavors (flavor) VALUES ("Ham");
+INSERT INTO flavors (flavor) VALUES ("Marguerita");
